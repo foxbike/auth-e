@@ -45,7 +45,7 @@ Une fois que tous les pods sont démarrés, vous pouvez accéder à l'applicatio
 | **KEYCLOAK_REALM** | Nom du domain keycloak de l'application | Auth-E |
 | **KEYCLOAK_CLIENT_ID** |  Nom assigné à tous les objets NestJs déployés par le gabarit. | angular-app |
 | **KEYCLOAK_DATABASE_NAME** | Nom de la base de données de Keycloak. | keycloak |
-| **GITHUB_REPOSITORY_URI** | Uri du dépôt de code de l'application. | https://github.com/CQEN-QDCE/auth-e.git |
+| **GITHUB_REPOSITORY_URI** | Uri du dépôt de code de l'application. | https://github.com/foxbike/auth-e.git |
 | **STORAGE_CLASS_NAME** | Nom de la classes de stockage utilisée par les volumes. | gp2 |
 | **NGINX_PORT** | Numéro de port sur lequel NGINX écoute. | 8080 |
 

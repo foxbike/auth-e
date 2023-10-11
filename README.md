@@ -46,7 +46,7 @@ Le moyen le plus pratique d'exécuter Auth.E est d'utiliser Docker. Avant de dé
 
 1. Clonez le dépôt
    ```sh
-   git clone https://github.com/CQEN-QDCE/auth-e.git
+   git clone https://github.com/foxbike/auth-e.git
    ```
 2. Commencez par construire les images Docker
    ```sh

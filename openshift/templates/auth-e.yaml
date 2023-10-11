@@ -656,7 +656,7 @@ parameters:
   displayName: GitHub repository URI
   description: URI of the GitHub repository.
   required: true
-  value: "https://github.com/CQEN-QDCE/auth-e.git"
+  value: "https://github.com/foxbike/auth-e.git"
 - name: KEYCLOAK_NAME
   displayName: Keycloak name
   description: The name assigned to all Keycloak objects defined in this template.
