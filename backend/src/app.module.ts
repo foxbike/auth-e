@@ -1,4 +1,6 @@
 import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { configService } from './config.service';
 import { AppController } from './app.controller';
 import {
   KeycloakConnectModule,
@@ -9,6 +11,9 @@ import {
   TokenValidation
 } from 'nest-keycloak-connect';
 import { APP_GUARD } from '@nestjs/core';
+import { UserController } from './auth/user.controller';
+import { UserService } from './auth/user.service';
+import { User } from './auth/user.entity';
 
 @Module({
   imports: [
@@ -20,9 +25,13 @@ import { APP_GUARD } from '@nestjs/core';
       policyEnforcement: PolicyEnforcementMode.PERMISSIVE,
       tokenValidation: TokenValidation.OFFLINE,
     }),
+    TypeOrmModule.forRoot(configService.getTypeOrmConfig()),
+    TypeOrmModule.forFeature([User]),
   ],
-  controllers: [AppController],
+  controllers: [AppController, 
+                UserController],
   providers: [
+    UserService,
     {
       provide: APP_GUARD,
       useClass: AuthGuard,
