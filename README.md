@@ -9,7 +9,7 @@
 
 ## À propos de Auth.E
 
-Outils et services qui facilitent l'émission, la vérification et la gestion d'attestations d'identité numérique basé sur [Hyperledger Aries](https://www.hyperledger.org/use/aries) et [Hyperledger Indy](https://www.hyperledger.org/use/hyperledger-indy).
+Application qui démontre l'authentification par attestations d'identité numérique basé sur [Hyperledger Aries](https://www.hyperledger.org/use/aries) et [Hyperledger Indy](https://www.hyperledger.org/use/hyperledger-indy).
 
 ### Développé avec
 
@@ -33,8 +33,6 @@ Outils et services qui facilitent l'émission, la vérification et la gestion d'
   npm install @angular/cli@latest -g
   ```
 
-### Installation
-
 ## Développement avec VSCode
 1. Assurez-vous d'avoir VSCode d'installé;
 2. Ouvrir l'espace de travail auth-e.workspace situé dans le répertoire .vscode;
@@ -42,7 +40,7 @@ Outils et services qui facilitent l'émission, la vérification et la gestion d'
 4. Exécutez le débogage en sélectionnant "Launch Server & Client";
 
 ## Installation
-Le moyen le plus pratique d'exécuter Auth.E est d'utiliser Docker. Avant de débuter, assurez-vous que [Docker Desktop](https://docker.com/products/docker-desktop/) est correctement installé sur votre machine.
+Le moyen le plus simple d'exécuter Auth.E est d'utiliser Docker. Avant de débuter, assurez-vous que [Docker Desktop](https://docker.com/products/docker-desktop/) est correctement installé sur votre machine.
 
 1. Clonez le dépôt
    ```sh
@@ -66,11 +64,11 @@ Au moment où tous les images s'exécutent, l'application est disponible ici [Au
    mot de passe: admin
    
 Les images Docker qui s'exécutent sont:
-1. Une base de données PostgreSql accessible ici http://localhost:5533;
-2. L'API REST NestJs de l'application accessible ici http://localhost:3301;
-3. Interface Angular accessible ici http://localhost:4301;
-4. Fournisseur d'identité Keycloak accessible ici http://localhost:8080;
-5. Outil de gestion pgAmin 4 accessible ici http://localhost:5300;
+1. Une base de données PostgreSql qui écoute sur le port 5533 (localhost);
+2. Une API REST en [NestJs](http://localhost:3301);
+3. Une interface en [Angular](http://localhost:4301);
+4. Un fournisseur d'identité [Keycloak](http://localhost:8080);
+5. Un outil de gestion de base de données [pgAdmin 4](http://localhost:5300);
 
 ## Licence
 Distribué sous Licence Libre du Québec – Réciprocité (LiLiQ-R). Voir [LICENCE](LICENSE) pour plus d'informations.
