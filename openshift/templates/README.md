@@ -4,9 +4,9 @@ Ce dépôt contient les instructions nécessaires pour déployer Auth.E sur Open
 
 | Gabarit  | Descripton |
 | -------- | ---------- |
-| [auth-e.yaml](https://github.com/CQEN-QDCE/auth-e/blob/master/openshift/templates/auth-e.yaml) | Installation de l'application. |
-| [auth-e.yaml](https://github.com/CQEN-QDCE/auth-e/blob/master/openshift/templates/auth-e-keycloak-realm.yaml) | Configuration du realm Keycloak. |
-| [auth-e.dev.params](https://github.com/CQEN-QDCE/auth-e/blob/master/openshift/templates/auth-e.dev.params) | Paramètres pour un environnement de développement. |
+| [auth-e.yaml](https://github.com/foxbike/auth-e/blob/master/openshift/templates/auth-e.yaml) | Installation de l'application. |
+| [auth-e-keycloak-realm.yaml](https://github.com/foxbike/auth-e/blob/master/openshift/templates/auth-e-keycloak-realm.yaml) | Configuration du realm Keycloak. |
+| [auth-e.dev.params](https://github.com/foxbike/auth-e/blob/master/openshift/templates/auth-e.dev.params) | Paramètres pour un environnement de développement. |
 
 ## Paramètres du gabarit
 
