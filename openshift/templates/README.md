@@ -5,6 +5,7 @@ Ce dépôt contient les instructions nécessaires pour déployer Auth.E sur Open
 | Gabarit  | Descripton |
 | -------- | ---------- |
 | [auth-e.yaml](https://github.com/CQEN-QDCE/auth-e/blob/master/openshift/templates/auth-e.yaml) | Installation de l'application. |
+| [auth-e.yaml](https://github.com/CQEN-QDCE/auth-e/blob/master/openshift/templates/auth-e-keycloak-realm.yaml) | Configuration du realm Keycloak. |
 | [auth-e.dev.params](https://github.com/CQEN-QDCE/auth-e/blob/master/openshift/templates/auth-e.dev.params) | Paramètres pour un environnement de développement. |
 
 ## Paramètres du gabarit
@@ -19,6 +20,7 @@ oc new-project auth-e
 ```
 Lancez l'installation sur OpenShift
 ```bash
+oc process -f ./auth-e-keycloak-realm.yaml --param-file=./auth-e.dev.params | oc apply -f -
 oc process -f ./auth-e.yaml --param-file=./auth-e.dev.params | oc apply -f -
 ```
 

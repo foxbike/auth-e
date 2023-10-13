@@ -6,8 +6,8 @@ apiVersion: template.openshift.io/v1
 metadata:
   name: ${APP_NAME}
   annotations:
-    description: Outils et services qui facilitent l'émission, la vérification et la gestion d'attestations d'identité numérique basé sur Hyperledger Aries-Indy.
-    tags: CQEN, SQIN, ING, Hyperledger, ARIES, Indy, Angular, NestJS, PostgreSql
+    description: Application qui démontre l'authentification par attestations d'identité numérique basé sur Hyperledger Aries et Hyperledger Indy.
+    tags: CQEN, Hyperledger, ARIES, Indy, Angular, NestJS, PostgreSql
 objects:
 ######################################################################
 # PostgreSql Database
@@ -478,7 +478,7 @@ objects:
         - args:
           - start-dev
           name: ${KEYCLOAK_NAME}
-          image: quay.io/keycloak/keycloak:21.0
+          image: quay.io/keycloak/keycloak:20.0
           ports:
             - containerPort: 8080
             - containerPort: 8443
@@ -500,7 +500,7 @@ objects:
           - name: DB_VENDOR
             value: POSTGRES
           - name: JAVA_OPTS
-            value: -Dkeycloak.profile=preview
+            value: -Dkeycloak.profile=preview -Dkeycloak.import=/opt/jboss/keycloak/imports/auth-e-realm.json
           - name: KEYCLOAK_ADMIN
             valueFrom:
               secretKeyRef:
@@ -520,6 +520,9 @@ objects:
           resources:
             limits:
               memory: 1024Mi
+          volumeMounts:
+          - mountPath: /opt/jboss/keycloak/imports
+            name: keycloak-realm
           imagePullPolicy: IfNotPresent
           capabilities: {}
           securityContext:
@@ -527,6 +530,10 @@ objects:
             privileged: false
         restartPolicy: Always
         dnsPolicy: ClusterFirst
+        volumes:
+        - name: keycloak-realm
+          configMap:
+            name: keycloak-realm
   status: {}
 - kind: Service
   apiVersion: v1
